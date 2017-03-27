@@ -1,0 +1,54 @@
+body {
+	background: blue;
+}
+
+header {
+	background: red;
+	height: 150px;
+	position: relative;
+	margin: 0 0 20px 0;
+	width: auto;
+}
+
+div {
+	background: red;
+}
+
+.gameBox {
+	position: relative;
+	background: transparent url("../images/ovaloffice.png") no-repeat;
+	height: 500px;
+	width: 700px;
+	float: left;
+	margin: 0 10px 0 0;
+	padding: 20px;
+	z-index: 0;
+}
+
+div.moleBox {
+	position: relative;
+	height: 200px;
+	width: 200px;
+	display: inline-block;
+	visibility: hidden;
+	background: transparent url("../images/trump1.png") no-repeat;
+	z-index: 3;
+}
+
+.box1 {
+	top: 240px;
+}
+
+.box2 {
+	top: 109px;
+	left: 50px;
+}
+
+.box3 {
+	top: 240px;
+}
+
+.box4 {
+	top: 40px;
+	left: 200px;
+}
