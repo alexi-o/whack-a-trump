@@ -24,10 +24,45 @@ body {
 	background: blue;
 }
 
+li {
+	list-style: none;
+	color: gold;
+	position: relative;
+	font-size: 30px;
+	top: 10px;
+	left: 10px;
+}
+
+button {
+	background: red;
+	float: right;
+	height: 100px;
+	width: 200px;
+	border-radius: 30px;
+	border-style: none;
+	top: 10px;
+	position: relative;
+	color: gold;
+	font-size: 30px;
+}
+
 .trumps {
 	height: 150px;
 	width: 150px;
 	display: none;
+}
+
+.scoreBoard {
+	background: red;
+	height: 100px;
+	width: 200px;
+	border-radius: 30px;
+	float: right;
+}
+
+#gameBoard {
+	float: left;
+	position: relative;
 }
 
 img {
