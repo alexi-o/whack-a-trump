@@ -13,17 +13,28 @@ var score2 = document.getElementById("span2");
 score2.innerText = 0;
 
 var button = document.getElementById("startGame");
-
 button.addEventListener("click", function(){
 	if(playerTurn === 0){
 		playerTurn++;
+		startGame();
 	} else if(playerTurn === 1){
 		playerTurn--;
+		startGame();
 	} else {
-
 	}
-	startGame();
 });
+
+// if(playerTurn === 0){
+// player1 = player1 +1;
+// score1.innerText = player1;
+// console.log(player1);
+// } else if(playerTurn === 1){
+// player2 = player2 +1;
+// score2.innerText = player2;
+// console.log(player2);
+// } else {
+// }
+
 
 
 function startGame(){
@@ -49,18 +60,17 @@ function startGame(){
 			}
 			document.getElementById("trump"+number).onclick=function(){
 				this.style.display = 'none';
-				if(playerTurn === 0){
-					player1 = player1 +1;
-					score1.innerText = player1;
-					console.log(player1);
-				} else if(playerTurn === 1){
-					player2 = player2 +1;
-					score2.innerText = player2;
-					console.log(player2);
-				} else {
-
-				}
-
+					if(playerTurn === 0){
+						console.log(player1);
+						player1 = player1 +1;
+						console.log(player1);
+						score1.innerText = player1;
+					} else if (playerTurn === 1) {
+						console.log(player2);
+						player2 = player2 +1;
+						console.log(player2);
+						score2.innerText = player2;
+					}
 				generateNumber();
 			};
 			if (++timer === 20) {

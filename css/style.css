@@ -1,3 +1,7 @@
+* {
+	color: gold;
+}
+
 #gameBoard {
 	width: 750px;
 	height: 420px;
@@ -50,6 +54,13 @@ button {
 	height: 150px;
 	width: 150px;
 	display: none;
+	position: absolute;
+}
+
+#timer {
+	background: red;
+	height: 100px;
+	width: 200px;
 }
 
 .scoreBoard {
