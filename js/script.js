@@ -3,7 +3,7 @@ function generateNumber() {
 	number = (Math.floor(Math.random()*3)+1);
 	return number;
 }
-var playerTurn = 0;
+var playerTurn = 1;
 var player1 = 0;
 var score1 = document.getElementById("span1");
 score1.innerText = 0;
@@ -12,9 +12,16 @@ var player2 = 0;
 var score2 = document.getElementById("span2");
 score2.innerText = 0;
 
-var button = document.getElementById('startGame');
+var button = document.getElementById("startGame");
 
 button.addEventListener("click", function(){
+	if(playerTurn === 0){
+		playerTurn++;
+	} else if(playerTurn === 1){
+		playerTurn--;
+	} else {
+
+	}
 	startGame();
 });
 
@@ -39,13 +46,21 @@ function startGame(){
 				setTimeout(function() {
 					document.getElementById("trump3").style.display="none";
 				},3000);
-
 			}
 			document.getElementById("trump"+number).onclick=function(){
 				this.style.display = 'none';
-				player1 = player1 + 1;
-				score1.innerText = player1;
-				console.log(player1);
+				if(playerTurn === 0){
+					player1 = player1 +1;
+					score1.innerText = player1;
+					console.log(player1);
+				} else if(playerTurn === 1){
+					player2 = player2 +1;
+					score2.innerText = player2;
+					console.log(player2);
+				} else {
+
+				}
+
 				generateNumber();
 			};
 			if (++timer === 20) {
