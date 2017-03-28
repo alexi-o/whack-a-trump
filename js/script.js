@@ -1,31 +1,36 @@
-var canvas = document.getElementById('canvas');
-var ctx = canvas.getContext('2d');
-var stage = new Stage(canvas);
 
-stage.mouseEventsEnabled = true;
+// trumpImg.src = '../images/trump2.png';
 
-trumpImg.src = "../images/trump1.png";
+// ctx.fillText('Spot 1', 140,103);
+// ctx.fillText('Spot 2', 200,150);
+// ctx.fillText('Spot 3', 50,150);
 
-var randomPos = Math.floor(Math.random() * 3);
-
-// Coordinates where a Trump can appear
-var trumpsX =[140, 200, 50];
-var trumpsY = [103, 150, 150];
-
-var currentTrumps = 0;
-var trumpWhacks = 0;
-var totalTrumps = 3;
-
-function Main()
-{
-
+var button = document.getElementById("gameButton");
+function generateNumber() {
+	number = (Math.floor(Math.random()*3)+1);
+	return number;
 }
 
-ctx.fillText('Spot 1', 140,103);
-ctx.fillText('Spot 2', 200,150);
-ctx.fillText('Spot 3', 50,150);
+function startGame(){
+		generateNumber();
+
+		if(number<=1) {
+			document.getElementById("trump1").style.display="block";
+			setTimeout(function() {
+				document.getElementById("trump1").style.display="none";
+			},3000);
+		} else if(number<=2) {
+			document.getElementById("trump2").style.display="block";
+			setTimeout(function() {
+				document.getElementById("trump2").style.display="none";
+			},3000);
+		} else {
+			document.getElementById("trump3").style.display="block";
+			setTimeout(function() {
+				document.getElementById("trump3").style.display="none";
+			},3000);
+		}
+	}
 
 
-
-// document.addEventListener('DOMContentLoaded', function() {
 

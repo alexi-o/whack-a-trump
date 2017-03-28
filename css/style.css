@@ -1,8 +1,9 @@
-canvas {
-	border: 1px solid black;
+#gameBoard {
 	width: 750px;
 	height: 420px;
 	background: url("../images/ovaloffice.png") no-repeat;
+	margin: 0 auto;
+	position: relative;
 }
 
 header {
@@ -21,4 +22,33 @@ h1 {
 
 body {
 	background: blue;
+}
+
+.trumps {
+	height: 150px;
+	width: 150px;
+	display: none;
+}
+
+img {
+	height: 100%;
+	width: 100%;
+}
+
+#trump1 {
+	position: relative;
+	left: 300px;
+	top: 141px;
+}
+
+#trump2 {
+	position: relative;
+	left: 100px;
+	top: 120px;
+}
+
+#trump3 {
+	position: relative;
+	left: 500px;
+	bottom: 31px;
 }
