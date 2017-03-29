@@ -16,7 +16,6 @@ var winBlock = document.getElementById("winMessage");
 // Game buttons, reset and start
 var buttonStart = document.getElementById("startGame");
 var buttonReset = document.getElementById("resetGame");
-var timeLeft = document.getElementById("timeLeft");
 
 function generateNumber() {
 	number = (Math.floor(Math.random()*3)+1);
@@ -24,34 +23,26 @@ function generateNumber() {
 }
 
 var time = 20;
-
-function timer(){
-	setTimeout(function(){
-		time--;
-		timeLeft.innerText = time;
-		if(time === 0){
-			stopTime()
-		} else{
-			timer();
+function countDown(){
+	setInterval(function(){
+		if(time > 0){
+			time--;
+			timeLeft.innerText = time;			
+		} else {
+			return;
 		}
 	}, 1000);
 }
 
-	function stopTime(){
-		clearTimeout();
-		time = 0;
-		console.log("TIME");
-	}
-
 buttonStart.addEventListener("click", function(){
 	if(playerTurn === 0){
 		playerTurn++;
-		timer();
 		startGame();
+		countDown();
 	} else if(playerTurn === 1){
 		playerTurn--;
-		timer();
 		startGame();
+		countDown();
 		setTimeout(function() {
 			checkForWin();
 		}, 25000);
@@ -62,6 +53,8 @@ buttonStart.addEventListener("click", function(){
 buttonReset.addEventListener("click", function(){
 	player1 = 0;
 	player2 = 0;
+	time = 20;
+	timeLeft.innerText = time;
 	score1.innerText = player1;
 	score2.innerText = player2;
 	winBlock.style.visibility = "hidden";
@@ -81,6 +74,7 @@ function checkForWin(){
 }
 
 function startGame(){
+	var timer = 0;
 	var intervalID = setInterval(function(){ 
 			generateNumber();
 			if(number<=1) {
