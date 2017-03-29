@@ -34,7 +34,15 @@ button.addEventListener("click", function(){
 // console.log(player2);
 // } else {
 // }
-
+function checkForWin(){
+	if(player1 > player2){
+		alert("Player 1 has won!")
+	} else if (player2 > player1) {
+		alert("Player 2 has won!")
+	} else {
+		alert("Tie!!");
+	}
+}
 
 
 function startGame(){

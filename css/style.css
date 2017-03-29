@@ -6,8 +6,6 @@
 	width: 750px;
 	height: 420px;
 	background: url("../images/ovaloffice.png") no-repeat;
-	margin: 0 auto;
-	position: relative;
 }
 
 header {
@@ -22,6 +20,13 @@ h1 {
 	vertical-align: middle;
 	line-height: 100px;
 	color: gold;
+}
+
+p{
+	text-align: center;
+	font-size: 30px;
+	vertical-align: middle;
+	line-height: 100px;
 }
 
 body {
@@ -55,6 +60,17 @@ button {
 	width: 150px;
 	visibility: hidden;
 	position: absolute;
+}
+
+.winMessage {
+	border-radius: 20px;
+	width: 250px;
+	height: 100px;
+	background: red;
+	position: relative;
+	z-index: 1;
+	bottom: 300px;
+	left: 250px;
 }
 
 #timer {
