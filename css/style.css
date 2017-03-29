@@ -6,6 +6,11 @@
 	width: 750px;
 	height: 420px;
 	background: url("../images/ovaloffice.png") no-repeat;
+	cursor: url("../images/hammer.png"), pointer;
+}
+
+#gameBoard:active {
+	cursor: url("../images/hammer2.png"), pointer;
 }
 
 header {
@@ -13,7 +18,8 @@ header {
 	background: red;
 	margin: 0 0 40px 0;
 	border-radius: 0 0 20px 20px;
-	min-width: 750px
+	min-width: 750px;
+
 }
 
 h1 {
@@ -38,6 +44,7 @@ p{
 
 body {
 	background: blue;
+	cursor: url("../images/hammer.png");
 }
 
 li {
