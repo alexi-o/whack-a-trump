@@ -1,5 +1,5 @@
 // Variable will toggle between players to change which score is recorded
-var playerTurn = 1;
+var playerTurn = 0;
 
 var player1 = 0;
 var score1 = document.getElementById("span1");
@@ -29,6 +29,9 @@ buttonStart.addEventListener("click", function(){
 	} else if(playerTurn === 1){
 		playerTurn--;
 		startGame();
+		setTimeout(function() {
+			checkForWin();
+		}, 25000);
 	} else {
 	}
 });
@@ -76,12 +79,12 @@ function startGame(){
 			}
 			document.getElementById("trump"+number).onclick=function(){
 				this.style.visibility = 'hidden';
-					if(playerTurn === 0){
+					if(playerTurn === 1){
 						console.log(player1);
 						player1 = player1 +1;
 						console.log(player1);
 						score1.innerText = player1;
-					} else if (playerTurn === 1) {
+					} else if (playerTurn === 0) {
 						console.log(player2);
 						player2 = player2 +1;
 						console.log(player2);
