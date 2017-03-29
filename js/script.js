@@ -8,6 +8,9 @@ var player1 = 0;
 var score1 = document.getElementById("span1");
 score1.innerText = 0;
 
+var winMessage = document.getElementById("winner");
+var winBlock = document.getElementById("winMessage");
+
 var player2 = 0;
 var score2 = document.getElementById("span2");
 score2.innerText = 0;
@@ -24,26 +27,18 @@ button.addEventListener("click", function(){
 	}
 });
 
-// if(playerTurn === 0){
-// player1 = player1 +1;
-// score1.innerText = player1;
-// console.log(player1);
-// } else if(playerTurn === 1){
-// player2 = player2 +1;
-// score2.innerText = player2;
-// console.log(player2);
-// } else {
-// }
 function checkForWin(){
 	if(player1 > player2){
-		alert("Player 1 has won!")
+		winBlock.style.visibility = "visible";
+		winMessage.innerText = "Player 1 Wins!";
 	} else if (player2 > player1) {
-		alert("Player 2 has won!")
+		winBlock.style.visibility = "visible";
+		winMessage.innerText = "Player 2 Wins!";
 	} else {
-		alert("Tie!!");
+		winBlock.style.visibility = "visible";
+		winMessage.innerText = "TEST!!!";
 	}
 }
-
 
 function startGame(){
 	var timer = 0;
