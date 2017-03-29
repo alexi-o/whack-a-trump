@@ -1,4 +1,3 @@
-var button = document.getElementById("gameButton");
 function generateNumber() {
 	number = (Math.floor(Math.random()*3)+1);
 	return number;
@@ -15,8 +14,10 @@ var player2 = 0;
 var score2 = document.getElementById("span2");
 score2.innerText = 0;
 
-var button = document.getElementById("startGame");
-button.addEventListener("click", function(){
+var buttonStart = document.getElementById("startGame");
+var buttonReset = document.getElementById("resetGame");
+
+buttonStart.addEventListener("click", function(){
 	if(playerTurn === 0){
 		playerTurn++;
 		startGame();
@@ -27,6 +28,14 @@ button.addEventListener("click", function(){
 	}
 });
 
+buttonReset.addEventListener("click", function(){
+	player1 = 0;
+	player2 = 0;
+	score1.innerText = player1;
+	score2.innerText = player2;
+	winBlock.style.visibility = "hidden";
+})
+
 function checkForWin(){
 	if(player1 > player2){
 		winBlock.style.visibility = "visible";
@@ -36,7 +45,7 @@ function checkForWin(){
 		winMessage.innerText = "Player 2 Wins!";
 	} else {
 		winBlock.style.visibility = "visible";
-		winMessage.innerText = "TEST!!!";
+		winMessage.innerText = "It's a tie!!!";
 	}
 }
 
