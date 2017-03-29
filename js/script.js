@@ -16,18 +16,41 @@ var winBlock = document.getElementById("winMessage");
 // Game buttons, reset and start
 var buttonStart = document.getElementById("startGame");
 var buttonReset = document.getElementById("resetGame");
+var timeLeft = document.getElementById("timeLeft");
 
 function generateNumber() {
 	number = (Math.floor(Math.random()*3)+1);
 	return number;
 }
 
+var time = 20;
+
+function timer(){
+	setTimeout(function(){
+		time--;
+		timeLeft.innerText = time;
+		if(time === 0){
+			stopTime()
+		} else{
+			timer();
+		}
+	}, 1000);
+}
+
+	function stopTime(){
+		clearTimeout();
+		time = 0;
+		console.log("TIME");
+	}
+
 buttonStart.addEventListener("click", function(){
 	if(playerTurn === 0){
 		playerTurn++;
+		timer();
 		startGame();
 	} else if(playerTurn === 1){
 		playerTurn--;
+		timer();
 		startGame();
 		setTimeout(function() {
 			checkForWin();
@@ -58,7 +81,6 @@ function checkForWin(){
 }
 
 function startGame(){
-	var timer = 0;
 	var intervalID = setInterval(function(){ 
 			generateNumber();
 			if(number<=1) {

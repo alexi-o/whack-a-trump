@@ -37,14 +37,15 @@ p{
 	line-height: 100px;
 }
 
-#gameTimer p {
+span {
 	position: relative;
-	left: -40px;
+	color: black;
 }
 
 body {
 	background: blue;
 	cursor: url("../images/hammer.png");
+	user-select: none;
 }
 
 li {
