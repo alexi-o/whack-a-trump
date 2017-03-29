@@ -41,25 +41,24 @@ function startGame(){
 	var timer = 0;
 	var intervalID = setInterval(function(){ 
 			generateNumber();
-
 			if(number<=1) {
-				document.getElementById("trump1").style.display="block";
+				document.getElementById("trump1").style.visibility="visible";
 				setTimeout(function() {
-					document.getElementById("trump1").style.display="none";
+					document.getElementById("trump1").style.visibility="hidden";
 				},3000);
 			} else if(number<=2) {
-				document.getElementById("trump2").style.display="block";
+				document.getElementById("trump2").style.visibility="visible";
 				setTimeout(function() {
-					document.getElementById("trump2").style.display="none";
+					document.getElementById("trump2").style.visibility="hidden";
 				},3000);
 			} else {
-				document.getElementById("trump3").style.display="block";
+				document.getElementById("trump3").style.visibility="visible";
 				setTimeout(function() {
-					document.getElementById("trump3").style.display="none";
+					document.getElementById("trump3").style.visibility="hidden";
 				},3000);
 			}
 			document.getElementById("trump"+number).onclick=function(){
-				this.style.display = 'none';
+				this.style.visibility = 'hidden';
 					if(playerTurn === 0){
 						console.log(player1);
 						player1 = player1 +1;
