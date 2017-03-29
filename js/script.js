@@ -1,21 +1,26 @@
-function generateNumber() {
-	number = (Math.floor(Math.random()*3)+1);
-	return number;
-}
+// Variable will toggle between players to change which score is recorded
 var playerTurn = 1;
+
 var player1 = 0;
 var score1 = document.getElementById("span1");
 score1.innerText = 0;
-
-var winMessage = document.getElementById("winner");
-var winBlock = document.getElementById("winMessage");
 
 var player2 = 0;
 var score2 = document.getElementById("span2");
 score2.innerText = 0;
 
+// Message box that displays over the game who won
+var winMessage = document.getElementById("winner");
+var winBlock = document.getElementById("winMessage");
+
+// Game buttons, reset and start
 var buttonStart = document.getElementById("startGame");
 var buttonReset = document.getElementById("resetGame");
+
+function generateNumber() {
+	number = (Math.floor(Math.random()*3)+1);
+	return number;
+}
 
 buttonStart.addEventListener("click", function(){
 	if(playerTurn === 0){
