@@ -26,7 +26,7 @@ document.getElementById("gameTitle").onclick=function openFade(){
 	this.classList = ("animate");
 	setTimeout(function() {
 		document.getElementById("gameTitle").style.visibility="hidden";
-	}, 2000);
+	}, 1800);
 }
 
 
@@ -68,7 +68,7 @@ buttonStart.addEventListener("click", function(){
 			checkForWin();
 			document.getElementById("startGame").style.visibility="hidden";
 			document.getElementById("resetGame").style.visibility="visible";
-		}, 25000);
+		}, 24000);
 	} else {
 	}
 });
