@@ -39,7 +39,7 @@ p{
 
 span {
 	position: relative;
-	color: black;
+	color: gold;
 }
 
 body {
@@ -71,6 +71,10 @@ button {
 	font-size: 30px;
 }
 
+a {
+	text-decoration: none;
+}
+
 .scoreBoard {
 	background: red;
 	height: 100px;
@@ -79,6 +83,22 @@ button {
 	float: left;
 	position: relative;
 }
+
+#titleScreen {
+	width: 750px;
+	height: 420px;
+	position: relative;
+	border-radius: 20px;
+	margin: 0 auto;
+	background: url("../images/titleScreen.png") no-repeat;
+}
+
+#titleButton {
+	position: relative;
+	margin: 0 auto;
+	left: 500px;
+}
+
 
 .trumps {
 	height: 150px;
