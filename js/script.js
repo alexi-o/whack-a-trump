@@ -39,15 +39,24 @@ buttonStart.addEventListener("click", function(){
 		playerTurn++;
 		startGame();
 		countDown();
+		setTimeout(function() {
+		winBlock.style.visibility = "visible";
+		winMessage.innerText = player1 + " Points!";
+	}, 22000)
 	} else if(playerTurn === 1){
+		winBlock.style.visibility = "hidden";
 		time = 21;
 		playerTurn--;
 		startGame();
 		setTimeout(function() {
+		winBlock.style.visibility = "visible";
+		winMessage.innerText = player1 + " Points!";
+	}, 21000)
+		setTimeout(function() {
 			checkForWin();
 			document.getElementById("startGame").style.visibility="hidden";
 			document.getElementById("resetGame").style.visibility="visible";
-		}, 22000);
+		}, 25000);
 	} else {
 	}
 });
@@ -59,10 +68,10 @@ buttonReset.addEventListener("click", function(){
 function checkForWin(){
 	if(player1 > player2){
 		winBlock.style.visibility = "visible";
-		winMessage.innerText = "Player 1 Wins!";
+		winMessage.innerText = "Player 1 Wins with " +player1 +" points!!";
 	} else if (player2 > player1) {
 		winBlock.style.visibility = "visible";
-		winMessage.innerText = "Player 2 Wins!";
+		winMessage.innerText = "Player 2 Wins with " +player2 +" points!!";
 	} else {
 		winBlock.style.visibility = "visible";
 		winMessage.innerText = "It's a tie!!!";

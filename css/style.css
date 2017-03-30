@@ -106,20 +106,15 @@ a {
 }
 
 #titleScreen {
+	left: 5px;
 	width: 750px;
 	height: 420px;
-	position: relative;
-	border-radius: 20px	;
+	position: absolute;
+	border-radius: 20px;
 	margin: 0 auto;
+	z-index: 10;
 	background: url("../images/titleScreen.png") no-repeat;
 }
-
-#titleButton {
-	position: relative;
-	margin: 0 auto;
-	left: 500px;
-}
-
 
 .trumps {
 	height: 150px;
@@ -187,10 +182,26 @@ img {
 	left: 500px;
 	bottom: 31px;
 }
-/*
-@media (max-width: 980px) {
-	.timeScore {
-		position: relative;
-		clear: both;
-		display: inline;
-}*/
+
+	.animated {
+		animation-name: bounce;
+		animation-duration: 3s; /* or: Xms */
+		animation-iteration-count: 1;
+		animation-direction: normal; /* or: alternate, reverse */
+		animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+		animation-fill-mode: forwards; /* or: backwards, both, none */
+		animation-delay: 0s; /* or: Xms */
+	}
+
+		@keyframes bounce {
+		0% {
+			position: relative;
+		}
+		50% {
+			position: relative;
+			top: -120px;
+		}
+		100% {
+			position: initial;
+		}
+	}
