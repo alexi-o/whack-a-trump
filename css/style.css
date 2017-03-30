@@ -65,7 +65,7 @@ span {
 
 body {
 	background: blue;
-	cursor: url("../images/hammer.png");
+	cursor: url("../images/hammer.png"); /*cursor changes to a hammer for the game*/
 	user-select: none;
 }
 
@@ -78,7 +78,7 @@ li {
 	left: 10px;
 }
 
-button {
+button { /*game buttons*/
 	background: red;
 	float: left;
 	margin: 50px 0 0 0;
@@ -92,7 +92,7 @@ button {
 	font-size: 30px;
 }
 
-a {
+a { /*removes underlined links*/
 	text-decoration: none;
 }
 
@@ -103,17 +103,6 @@ a {
 	border-radius: 30px;
 	float: left;
 	position: relative;
-}
-
-#titleScreen {
-	left: 5px;
-	width: 750px;
-	height: 420px;
-	position: absolute;
-	border-radius: 20px;
-	margin: 0 auto;
-	z-index: 10;
-	background: url("../images/titleScreen.png") no-repeat;
 }
 
 #winMessage {

@@ -23,12 +23,12 @@ function generateNumber() {//function to randomly generate a number which will b
 
 var time = 20;//rounds will be 20 seconds long, this time will display that time and countdown accordingly
 function countDown(){
-	setInterval(function(){
-		if(time > 0){
-			time--;
-			timeLeft.innerText = time;			
-		} else {
-			return;
+  setInterval(function(){
+    if(time > 0){
+      time--;
+      timeLeft.innerText = time;			
+    } else {
+      return;
 		}
 	}, 1000);
 }
