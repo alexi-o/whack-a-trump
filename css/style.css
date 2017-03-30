@@ -2,6 +2,32 @@
 	color: gold;
 }
 
+#gameTitle {
+	background: url("../images/titleScreen1.png") no-repeat;
+	height: 420px;
+	width: 750px;
+	position: absolute;
+	z-index: 20;
+	left: 187px;
+	border-radius: 20px;
+}
+
+.animate {
+	animation-name: fade;
+	animation-duration: 2s;
+	animation-direction: normal;
+	animation-timing-function: ease-out;
+}
+
+@keyframes fade {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
 #gameBoard {
 	width: 750px;
 	height: 420px;
@@ -9,7 +35,11 @@
 	cursor: url("../images/hammer.png"), pointer;
 }
 
-#instructions {
+#gameBoard:active {
+	cursor: url("../images/hammer2.png"), pointer; /*pointer changes on click to resemble animation*/
+}
+
+#instructions { /*initial gameplay instructions, disppear when game starts*/
 	z-index: 10;
 	width: 500px;
 	height: 300px;
@@ -20,14 +50,10 @@
 	border-radius: 20px;
 }
 
-#introText {
+#introText { /*Text within instructions box*/
 	font-size: 35px;
 	bottom: 30px;
 	left: 5px;
-}
-
-#gameBoard:active {
-	cursor: url("../images/hammer2.png"), pointer;
 }
 
 header {
@@ -39,16 +65,17 @@ header {
 
 }
 
-h1,h2 {
+h1 {
 	position: relative;
 	text-align: center;
 	vertical-align: middle;
 	line-height: 100px;
 	color: gold;
 }
-h3 {
+h2,h3 {
 	text-align: center;
 	font-size: 40px;
+	position: relative;
 }
 
 p{
@@ -142,7 +169,7 @@ a { /*removes underlined links*/
 	border-radius: 20px;
 }
 
-img {
+img { 
 	height: 100%;
 	width: 100%;
 }
@@ -168,6 +195,6 @@ img {
 .trumps {
 	height: 150px;
 	width: 150px;
-	visibility: hidden;
+	visibility: hidden; /*set to hidden for gameplay reasons*/
 	position: absolute;
 }

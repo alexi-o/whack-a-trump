@@ -21,6 +21,15 @@ function generateNumber() {//function to randomly generate a number which will b
 	return number;
 }
 
+
+document.getElementById("gameTitle").onclick=function openFade(){
+	this.classList = ("animate");
+	setTimeout(function() {
+		document.getElementById("gameTitle").style.visibility="hidden";
+	}, 2000);
+}
+
+
 var time = 20;//rounds will be 20 seconds long, this time will display that time and countdown accordingly
 function countDown(){
   setInterval(function(){
@@ -53,7 +62,7 @@ buttonStart.addEventListener("click", function(){
 		startGame();
 		setTimeout(function() {
 		winBlock.style.visibility = "visible"; 
-		winMessage.innerText = player1 + " Points!";
+		winMessage.innerText = player2 + " Points!";
 	}, 21000)
 		setTimeout(function() {
 			checkForWin();
@@ -67,10 +76,10 @@ buttonStart.addEventListener("click", function(){
 function checkForWin(){//function triggers after player 2's round has ended to compare the final scores and determine a winner
 	if(player1 > player2){
 		winBlock.style.visibility = "visible";
-		winMessage.innerText = "Player 1 Wins with " +player1 +" points!!";
+		winMessage.innerText = "Player 1 Wins!";
 	} else if (player2 > player1) {
 		winBlock.style.visibility = "visible";
-		winMessage.innerText = "Player 2 Wins with " +player2 +" points!!";
+		winMessage.innerText = "Player 2 Wins!";
 	} else {
 		winBlock.style.visibility = "visible";
 		winMessage.innerText = "It's a tie!!!";
