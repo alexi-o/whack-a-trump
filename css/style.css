@@ -99,6 +99,10 @@ button {
 	visibility: hidden;
 }
 
+#resetGame {
+	visibility: hidden;
+}
+
 #gameTimer {
 	background: red;
 	height: 100px;

@@ -40,25 +40,28 @@ buttonStart.addEventListener("click", function(){
 		startGame();
 		countDown();
 	} else if(playerTurn === 1){
+		time = 21;
 		playerTurn--;
 		startGame();
-		countDown();
 		setTimeout(function() {
 			checkForWin();
-		}, 25000);
+			document.getElementById("startGame").style.visibility="hidden";
+			document.getElementById("resetGame").style.visibility="visible";
+		}, 22000);
 	} else {
 	}
 });
 
 buttonReset.addEventListener("click", function(){
-	player1 = 0;
-	player2 = 0;
-	time = 20;
-	timeLeft.innerText = time;
-	score1.innerText = player1;
-	score2.innerText = player2;
-	winBlock.style.visibility = "hidden";
-})
+	window.location.reload();
+	// player1 = 0;
+	// player2 = 0;
+	// time = 20;
+	// timeLeft.innerText = time;
+	// score1.innerText = player1;
+	// score2.innerText = player2;
+	// winBlock.style.visibility = "hidden";
+});
 
 function checkForWin(){
 	if(player1 > player2){
@@ -113,8 +116,3 @@ function startGame(){
    }
 }, 1000);
 }
-
-
-
-
-
