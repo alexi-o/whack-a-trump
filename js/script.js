@@ -54,13 +54,6 @@ buttonStart.addEventListener("click", function(){
 
 buttonReset.addEventListener("click", function(){
 	window.location.reload();
-	// player1 = 0;
-	// player2 = 0;
-	// time = 20;
-	// timeLeft.innerText = time;
-	// score1.innerText = player1;
-	// score2.innerText = player2;
-	// winBlock.style.visibility = "hidden";
 });
 
 function checkForWin(){
@@ -78,6 +71,7 @@ function checkForWin(){
 
 function startGame(){
 	var timer = 0;
+	document.getElementById("instructions").style.visibility = "hidden";
 	var intervalID = setInterval(function(){ 
 			generateNumber();
 			if(number<=1) {

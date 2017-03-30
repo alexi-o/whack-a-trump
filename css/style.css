@@ -9,6 +9,23 @@
 	cursor: url("../images/hammer.png"), pointer;
 }
 
+#instructions {
+	z-index: 10;
+	width: 500px;
+	height: 300px;
+	background-color: rgba(0,0,0,.7);
+	position: absolute;
+	left: 120px;
+	top: 50px;
+	border-radius: 20px;
+}
+
+#introText {
+	font-size: 35px;
+	bottom: 30px;
+	left: 5px;
+}
+
 #gameBoard:active {
 	cursor: url("../images/hammer2.png"), pointer;
 }
@@ -22,12 +39,16 @@ header {
 
 }
 
-h1 {
+h1,h2 {
 	position: relative;
 	text-align: center;
 	vertical-align: middle;
 	line-height: 100px;
 	color: gold;
+}
+h3 {
+	text-align: center;
+	font-size: 40px;
 }
 
 p{
@@ -88,7 +109,7 @@ a {
 	width: 750px;
 	height: 420px;
 	position: relative;
-	border-radius: 20px;
+	border-radius: 20px	;
 	margin: 0 auto;
 	background: url("../images/titleScreen.png") no-repeat;
 }
