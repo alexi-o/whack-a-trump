@@ -116,13 +116,6 @@ a {
 	background: url("../images/titleScreen.png") no-repeat;
 }
 
-.trumps {
-	height: 150px;
-	width: 150px;
-	visibility: hidden;
-	position: absolute;
-}
-
 #winMessage {
 	border-radius: 20px;
 	width: 250px;
@@ -183,25 +176,9 @@ img {
 	bottom: 31px;
 }
 
-	.animated {
-		animation-name: bounce;
-		animation-duration: 3s; /* or: Xms */
-		animation-iteration-count: 1;
-		animation-direction: normal; /* or: alternate, reverse */
-		animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
-		animation-fill-mode: forwards; /* or: backwards, both, none */
-		animation-delay: 0s; /* or: Xms */
-	}
-
-		@keyframes bounce {
-		0% {
-			position: relative;
-		}
-		50% {
-			position: relative;
-			top: -120px;
-		}
-		100% {
-			position: initial;
-		}
-	}
+.trumps {
+	height: 150px;
+	width: 150px;
+	visibility: hidden;
+	position: absolute;
+}

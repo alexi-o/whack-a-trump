@@ -1,13 +1,12 @@
-// Variable will toggle between players to change which score is recorded
-var playerTurn = 0;
+var playerTurn = 0;// Variable will toggle between players to change which score is recorded
 
-var player1 = 0;
+var player1 = 0;//initial score for player 1
 var score1 = document.getElementById("span1");
-score1.innerText = 0;
+score1.innerText = 0;//initial score displayed on the board for player 1
 
-var player2 = 0;
+var player2 = 0;//initial score for player 2
 var score2 = document.getElementById("span2");
-score2.innerText = 0;
+score2.innerText = 0;//initial score displayed on the board for player 2
 
 // Message box that displays over the game who won
 var winMessage = document.getElementById("winner");
@@ -17,12 +16,12 @@ var winBlock = document.getElementById("winMessage");
 var buttonStart = document.getElementById("startGame");
 var buttonReset = document.getElementById("resetGame");
 
-function generateNumber() {
+function generateNumber() {//function to randomly generate a number which will be used in below conditionals to trigger different Trump locations
 	number = (Math.floor(Math.random()*3)+1);
 	return number;
 }
 
-var time = 20;
+var time = 20;//rounds will be 20 seconds long, this time will display that time and countdown accordingly
 function countDown(){
 	setInterval(function(){
 		if(time > 0){
@@ -33,23 +32,27 @@ function countDown(){
 		}
 	}, 1000);
 }
-
+// Reset button reloads the page
+buttonReset.addEventListener("click", function(){
+	window.location.reload();
+});
+// Start button with different actions for each player
 buttonStart.addEventListener("click", function(){
 	if(playerTurn === 0){
-		playerTurn++;
+		playerTurn++; //Toggles between players
 		startGame();
-		countDown();
+		countDown(); //Starts the timer
 		setTimeout(function() {
-		winBlock.style.visibility = "visible";
+		winBlock.style.visibility = "visible"; //Activates the winBlock to show the score after the round
 		winMessage.innerText = player1 + " Points!";
 	}, 22000)
 	} else if(playerTurn === 1){
-		winBlock.style.visibility = "hidden";
-		time = 21;
-		playerTurn--;
+		winBlock.style.visibility = "hidden"; //Hides the winBlock from Player 1's round
+		time = 21; // Sets the timer back at the start of the round for player 2
+		playerTurn--; //Toggles between players
 		startGame();
 		setTimeout(function() {
-		winBlock.style.visibility = "visible";
+		winBlock.style.visibility = "visible"; 
 		winMessage.innerText = player1 + " Points!";
 	}, 21000)
 		setTimeout(function() {
@@ -61,11 +64,7 @@ buttonStart.addEventListener("click", function(){
 	}
 });
 
-buttonReset.addEventListener("click", function(){
-	window.location.reload();
-});
-
-function checkForWin(){
+function checkForWin(){//function triggers after player 2's round has ended to compare the final scores and determine a winner
 	if(player1 > player2){
 		winBlock.style.visibility = "visible";
 		winMessage.innerText = "Player 1 Wins with " +player1 +" points!!";
@@ -78,7 +77,7 @@ function checkForWin(){
 	}
 }
 
-function startGame(){
+function startGame(){ //main game function that randomizes location and corresponding Trump images
 	var timer = 0;
 	document.getElementById("instructions").style.visibility = "hidden";
 	var intervalID = setInterval(function(){ 
@@ -87,35 +86,35 @@ function startGame(){
 				document.getElementById("trump1").style.visibility="visible";
 				setTimeout(function() {
 					document.getElementById("trump1").style.visibility="hidden";
-				},3000);
+				},2000);
 			} else if(number<=2) {
 				document.getElementById("trump2").style.visibility="visible";
 				setTimeout(function() {
 					document.getElementById("trump2").style.visibility="hidden";
-				},3000);
+				},2000);
 			} else {
 				document.getElementById("trump3").style.visibility="visible";
 				setTimeout(function() {
 					document.getElementById("trump3").style.visibility="hidden";
-				},3000);
+				},2000);
 			}
 			document.getElementById("trump"+number).onclick=function(){
-				this.style.visibility = 'hidden';
+				this.style.visibility = 'hidden'; //removes the trump image on click and adds a point for the current player
 					if(playerTurn === 1){
 						console.log(player1);
 						player1 = player1 +1;
 						console.log(player1);
-						score1.innerText = player1;
+						score1.innerText = player1; //logs Player 1's score onto the board
 					} else if (playerTurn === 0) {
 						console.log(player2);
 						player2 = player2 +1;
 						console.log(player2);
-						score2.innerText = player2;
+						score2.innerText = player2;//logs Player 2's score onto the board
 					}
-				generateNumber();
+				generateNumber(); //generates a random number to trigger different trump locations
 			};
-			if (++timer === 20) {
+			if (++timer === 40) { //after 40 half second iterations, the round ends (20 seconds) 
        			window.clearInterval(intervalID);
    }
-}, 1000);
+}, 500);
 }
