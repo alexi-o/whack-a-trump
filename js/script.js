@@ -23,6 +23,7 @@ function generateNumber() {//function to randomly generate a number which will b
 
 
 document.getElementById("gameTitle").onclick=function openFade(){
+	buttonStart.style.visibility = "visible";
 	this.classList = ("animate");
 	setTimeout(function() {
 		document.getElementById("gameTitle").style.visibility="hidden";
