@@ -5,11 +5,12 @@
 #gameTitle {
 	background: url("../images/titleScreen1.png") no-repeat;
 	height: 420px;
-	width: 750px;
+	width: 800px;
 	position: absolute;
 	z-index: 20;
-	left: 187px;
-	border-radius: 20px;
+	float: left;
+	max-width: 1000px;
+	margin: 0 auto;
 }
 
 .animate {
@@ -198,6 +199,6 @@ img {
 .trumps {
 	height: 150px;
 	width: 150px;
-	visibility: hidden; /*set to hidden for gameplay reasons*/
+	visibility: visible; /*set to hidden for gameplay reasons*/
 	position: absolute;
 }
