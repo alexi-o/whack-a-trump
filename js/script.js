@@ -51,23 +51,26 @@ buttonStart.addEventListener("click", function(){
 	if(playerTurn === 0){
 		playerTurn++; //Toggles between players
 		startGame();
+		buttonStart.style.visibility = "hidden";
 		countDown(); //Starts the timer
 		setTimeout(function() {
 		winBlock.style.visibility = "visible"; //Activates the winBlock to show the score after the round
 		winMessage.innerText = player1 + " Points!";
+		buttonStart.style.visibility = "visible";
+		buttonStart.classList = ("flicker");
 	}, 22000)
 	} else if(playerTurn === 1){
 		winBlock.style.visibility = "hidden"; //Hides the winBlock from Player 1's round
 		time = 21; // Sets the timer back at the start of the round for player 2
 		playerTurn--; //Toggles between players
 		startGame();
+		buttonStart.style.visibility = "hidden";
 		setTimeout(function() {
 		winBlock.style.visibility = "visible"; 
 		winMessage.innerText = player2 + " Points!";
 	}, 21000)
 		setTimeout(function() {
 			checkForWin();
-			document.getElementById("startGame").style.visibility="hidden";
 			document.getElementById("resetGame").style.visibility="visible";
 		}, 24000);
 	} else {

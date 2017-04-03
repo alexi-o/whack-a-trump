@@ -20,6 +20,19 @@
 	animation-timing-function: ease-out;
 }
 
+.flicker {
+	animation-name: flicker;
+	animation-duration: 1s;
+	animation-direction: normal;
+	animation-iteration-count: 50;
+}
+
+@keyframes flicker
+    {
+      0%   {background: gold;}
+      100% {background: red;}
+    }
+
 @keyframes fade {
 	from {
 		opacity: 1;
@@ -199,6 +212,6 @@ img {
 .trumps {
 	height: 150px;
 	width: 150px;
-	visibility: visible; /*set to hidden for gameplay reasons*/
+	visibility: hidden; /*set to hidden for gameplay reasons*/
 	position: absolute;
 }
