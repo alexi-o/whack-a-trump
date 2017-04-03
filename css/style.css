@@ -209,6 +209,26 @@ img {
 	bottom: 31px;
 }
 
+#trump4 {
+	position: absolute;
+	left: 450px;
+	bottom: 270px;
+	transform: rotate(180deg);
+}
+
+#trump5 {
+	position: absolute;
+	transform: rotate(90deg);
+	bottom: 150px;
+}
+
+#trump6 {
+	position: absolute;
+	transform: rotate(-90deg);
+	left: 600px;
+	bottom: 200px;
+}
+
 .trumps {
 	height: 150px;
 	width: 150px;

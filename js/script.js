@@ -17,7 +17,7 @@ var buttonStart = document.getElementById("startGame");
 var buttonReset = document.getElementById("resetGame");
 
 function generateNumber() {//function to randomly generate a number which will be used in below conditionals to trigger different Trump locations
-	number = (Math.floor(Math.random()*3)+1);
+	number = (Math.floor(Math.random()*6)+0);
 	return number;
 }
 
@@ -100,16 +100,31 @@ function startGame(){ //main game function that randomizes location and correspo
 				setTimeout(function() {
 					document.getElementById("trump1").style.visibility="hidden";
 				},2000);
-			} else if(number<=2) {
+			} else if(number<=2 && number>1) {
 				document.getElementById("trump2").style.visibility="visible";
 				setTimeout(function() {
 					document.getElementById("trump2").style.visibility="hidden";
 				},2000);
-			} else {
+			} else if(number<=3 && number>2) {
 				document.getElementById("trump3").style.visibility="visible";
 				setTimeout(function() {
 					document.getElementById("trump3").style.visibility="hidden";
 				},2000);
+			} else if(number<=4 && number>3) {
+				document.getElementById("trump4").style.visibility="visible";
+				setTimeout(function() {
+					document.getElementById("trump4").style.visibility="hidden";
+				},2000);
+			} else if(number<=5 && number>4) {
+				document.getElementById("trump5").style.visibility="visible";
+				setTimeout(function() {
+					document.getElementById("trump5").style.visibility="hidden";
+				},2000);
+			} else if(number<=6 && number>5) {
+				document.getElementById("trump6").style.visibility="visible";
+				setTimeout(function() {
+					document.getElementById("trump6").style.visibility="hidden";
+				},2000);								
 			}
 			document.getElementById("trump"+number).onclick=function(){
 				this.style.visibility = 'hidden'; //removes the trump image on click and adds a point for the current player
@@ -126,7 +141,7 @@ function startGame(){ //main game function that randomizes location and correspo
 					}
 				generateNumber(); //generates a random number to trigger different trump locations
 			};
-			if (++timer === 40) { //after 40 half second iterations, the round ends (20 seconds) 
+			if (++timer === 36) { //after 40 half second iterations, the round ends (20 seconds) 
        			window.clearInterval(intervalID);
    }
 }, 500);
